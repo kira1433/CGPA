@@ -9,10 +9,10 @@ const Home = () => {
     grade: number;
   }
   const [semesters, setSemesters] = useState<{ [key: number]: icourse[] }>(
-    JSON.parse(
-      localStorage.getItem("semesters") ||
-        "{1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: []}"
-    )
+      JSON.parse(
+        localStorage?.getItem("semesters") ||
+          JSON.stringify({1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: []})
+      )
   );
   const [sem, setSem] = useState(1);
   const [courses, setCourses] = useState<icourse[]>(semesters[sem]);
@@ -60,7 +60,7 @@ const Home = () => {
     setRefresh(!refresh);
   };
   return (
-    <div className=" container flex flex-col justify-evenly grow dark:bg-gray-800 text-black">
+    <div className=" flex flex-col justify-evenly grow dark:bg-gray-800 text-black">
       <div className="overflow-hidden">
         <div className="justify-center mx-2 my-3 flex flex-cols scale-125  object-contain">
           <div className="font-xl font-semibold ring-1 ring-gray-200 dark:ring-gray-500  inline-block py-2 px-3 mx-2 rounded text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 uppercase last:mr-0 mr-1">
@@ -89,7 +89,7 @@ const Home = () => {
         </div>
       </div>
       {courses.map((course) => (
-        <div className="flex justify-center container">
+        <div className="flex justify-center ">
           <div className="flex justify-end container">
             <div className="relative">
               <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-black">
@@ -170,7 +170,7 @@ const Home = () => {
         </div>
       ))}
 
-      <div className="flex justify-center mt-2 container">
+      <div className="flex justify-center mt-2 ">
         <div className="flex flex-row gap-4 justify-center -mr-[25%] container">
           <div className="flex gap-2 justify-center items-center">
             <div className=" font-semibold ring-1 ring-gray-200 dark:ring-gray-500  inline-block py-2 px-3 rounded text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 border-gray-300 dark:border-gray-600 uppercase last:mr-0 mr-1">

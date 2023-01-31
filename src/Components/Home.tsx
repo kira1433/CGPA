@@ -18,7 +18,7 @@ function Home() {
     }
   }, [darkMode]);
   return (
-    <div className="container justify-end flex flex-row h-screen w-screen overflow-auto">
+    <div className="justify-end  flex flex-row h-screen w-screen overflow-auto">
       <SideBar toggleDark={toggleDark} />
       <Calc />
     </div>
