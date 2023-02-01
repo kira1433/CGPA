@@ -1,0 +1,4 @@
+#Wed Feb 01 11:56:29 IST 2023
+base.0=/Users/shashankh/Documents/GitHub/CGPA/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
