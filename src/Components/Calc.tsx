@@ -9,10 +9,19 @@ const Home = () => {
     grade: number;
   }
   const [semesters, setSemesters] = useState<{ [key: number]: icourse[] }>(
-      JSON.parse(
-        localStorage?.getItem("semesters") ||
-          JSON.stringify({1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: []})
-      )
+    JSON.parse(
+      localStorage?.getItem("semesters") ||
+        JSON.stringify({
+          1: [],
+          2: [],
+          3: [],
+          4: [],
+          5: [],
+          6: [],
+          7: [],
+          8: [],
+        })
+    )
   );
   const [sem, setSem] = useState(1);
   const [courses, setCourses] = useState<icourse[]>(semesters[sem]);
